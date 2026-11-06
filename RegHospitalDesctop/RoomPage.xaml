@@ -7,6 +7,13 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="RoomPage">
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Page.Resources>
 
     <StackPanel>
         <TextBlock Text="Комнаты" FontSize="20"/>
@@ -44,11 +51,10 @@
             <TextBox Text="{Binding Floor}" Width="150" Margin="10"/>
             <TextBox Text="{Binding Purpose}" Width="150" Margin="10"/>
         </StackPanel>
-        
-        <Button Content="Сохранить изменения" Click="Button_Click"/>
-
-        <Button Content="Удалить" Click="Del_Click"/>
-
-
+        <StackPanel Orientation="Horizontal" Margin="0,50,0,0" HorizontalAlignment="Center">
+            <Button Content="Сохранить изменения" Click="Button_Click"/>
+            <Button Content="Добавить кабинет" Click="ButtonAddRoom"/>
+            <Button Content="Удалить" Click="Del_Click"/>
+        </StackPanel>
     </StackPanel>
 </Page>

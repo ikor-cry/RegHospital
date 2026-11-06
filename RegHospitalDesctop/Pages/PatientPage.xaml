@@ -10,8 +10,23 @@
 
     <StackPanel>
         <TextBlock Text="Пациенты" FontSize="20"/>
-        <DataGrid x:Name="tablePatient" Height="300"/>
+        <DataGrid x:Name="tablePatient" SelectionChanged="Patientlist" Height="300"/>
+        <StackPanel x:Name="StackPanel">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Text="{Binding FullName}" Height="20" Width="200" Background="Azure" Margin="10"/>
+                <TextBox Text="{Binding BirthDate}" Height="20" Width="200" Background="Azure" Margin="10"/>
+                <TextBox Text="{Binding Gender}" Height="20" Width="200" Background="Azure" Margin="10"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Text="{Binding Phone}" Height="20" Width="200" Background="Azure" Margin="10"/>
+                <TextBox Text="{Binding Address}" Height="20" Width="200" Background="Azure" Margin="10"/>
+                <TextBox Text="{Binding PolicyNumber}" Height="20" Width="200" Background="Azure" Margin="10"/>
+            </StackPanel>
+        </StackPanel>
 
         <Button Content="Сохранить изменнеия" Click="Button_Click"/>
+        <Button Content="Удалить" Click="Del_Click"/>
+        <Button Content="Добавить" Click="Dob_Click"/>
+
     </StackPanel>
 </Page>

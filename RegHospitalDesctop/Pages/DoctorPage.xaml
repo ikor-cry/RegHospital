@@ -23,7 +23,6 @@
             <ComboBox  x:Name="SpecList" DisplayMemberPath="Name" SelectedValuePath="SpecialtieId" SelectedValue="{Binding SpecialtieId}" Height="18" Width="80" Margin="10"/>
             <ComboBox  x:Name="RoomsList" DisplayMemberPath="Number" SelectedValuePath="RoomId" SelectedValue="{Binding RoomId}" Height="18" Width="80" Margin="10"/>
             <TextBox Text="{Binding WorkShedule}" Height="20" Width="150" Background="Azure" Margin="10"/>
-
         </StackPanel>
 
         <Button Content="Сохранить изменения" Click="btnclick"/>

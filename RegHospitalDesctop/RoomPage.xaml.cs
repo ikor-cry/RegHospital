@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using RegHospital.Objects;
 using Microsoft.EntityFrameworkCore;
 using RegHospital.Objects;
+using RegHospitalDesctop.Windows;
 
 namespace RegHospitalDesctop
 {
@@ -62,6 +63,20 @@ namespace RegHospitalDesctop
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
            
+        }
+
+        private void ButtonAddRoom(object sender, RoutedEventArgs e)
+        {
+            Room r = new Room();
+            AddRoomWindow rum = new AddRoomWindow();
+            rum.DataContext = r;
+
+            if(rum.ShowDialog() == true)
+            {
+                rooms.Add(r);
+
+                db.SaveChanges();
+            }
         }
     }
 }
