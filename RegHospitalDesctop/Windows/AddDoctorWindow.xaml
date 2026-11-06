@@ -25,16 +25,20 @@
             <Label Content="Комната фйди:"/>
 
             <ComboBox x:Name="listRoom" 
-          DisplayMemberPath="Number"
-          SelectedValuePath="RoomId"
-          SelectedValue="{Binding RoomId}"
-          Height="20" MaxWidth="100" Width="100"/>
-            
+              IsEditable="True"
+              IsTextSearchEnabled="True"
+              DisplayMemberPath="Number"
+              SelectedValuePath="RoomId"
+              SelectedValue="{Binding RoomId}"
+              Height="20" MaxWidth="100" Width="100"/>  
+
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Label Content="айди Специальность:"/>
             
             <ComboBox x:Name="listSpecs" 
+                      IsEditable="True"
+                      IsTextSearchEnabled="True"
                       DisplayMemberPath="Name"
                       SelectedValuePath="SpecialtieId"
                       SelectedValue="{Binding SpecialtieId}"

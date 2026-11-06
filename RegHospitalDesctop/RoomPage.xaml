@@ -20,26 +20,33 @@
 
 
         <ScrollViewer Height="200">
-            <ItemsControl x:Name="RoomsList" >
+            <ItemsControl x:Name="RoomsList">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel/>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
 
-
-
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border CornerRadius="10" Background="Aqua" Margin="5" MouseDown="Border_MouseDown">
+                        <Border CornerRadius="10" Margin="5" MouseDown="Border_MouseDown">
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="Background" Value="Aqua"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="DeepSkyBlue"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+
                             <StackPanel Margin="5" Width="150" MouseDown="StackPanel_MouseDown">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="{Binding Number}" Width="70" FontSize="30"/>
                                     <TextBlock Text="{Binding Floor}" Width="50" FontSize="30"/>
                                 </StackPanel>
-
                                 <TextBlock Text="{Binding Purpose}" Width="140"/>
-
                             </StackPanel>
                         </Border>
                     </DataTemplate>
